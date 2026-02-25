@@ -1,23 +1,33 @@
 //
 //  ContentView.swift
-//  CAPI
+//  CAPI2.0
 //
-//  Created by Brandon Aubrey on 3/14/25.
+//  Created by Brandon Aubrey on 2/12/26.
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            FeedView()
+                .tabItem {
+                    Label("Feed", systemImage: "house.fill")
+                }
+            RandomView()
+                .tabItem {
+                    Label("Random", systemImage: "person.fill")
+                }
+            FactsView()
+                .tabItem {
+                    Label("Facts", systemImage: "person.fill")
+                }
         }
-        .padding()
     }
 }
+
 
 #Preview {
     ContentView()
